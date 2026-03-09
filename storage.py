@@ -11,3 +11,6 @@ def load_TASKS():
         return json.loads(TASKS_FILE.read_text(encoding="utf8"))
     except json.JSONDecodeError:
         return []
+
+def save_TASKS(tasks):
+    TASKS_FILE.write_text(json.dumps(tasks, indent=4), encoding="utf8")

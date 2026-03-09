@@ -2,7 +2,7 @@ from helpers import today
 
 
 class Task:
-    def __init__(self, id, description, status = "to-do", createdAt = None, updatedAt = None):
+    def __init__(self, id, description, status = "not_done", createdAt = None, updatedAt = None):
         self.id = id
         self.description = description
         self.status = status
