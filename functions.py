@@ -1,6 +1,5 @@
-from storage import load_TASKS, TASKS_FILE, save_TASKS
+from storage import load_TASKS, save_TASKS
 from models import Task
-import json
 from helpers import validate_id, today
 
 def list(key = None):

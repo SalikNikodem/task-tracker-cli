@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     match sys.argv[1:]:
         case["help"]:
-            print("xd")
+            print("inprogress")
 
         case ["add", description]:
             add(description)
