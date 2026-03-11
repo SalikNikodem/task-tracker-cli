@@ -9,10 +9,10 @@ Features
 -Delete tasks by ID.
 -Change status (todo, in-progress, done).
 -List tasks with optional filtering by status.
--Data Persistence: All tasks are stored in a `tasks.json` file.
+-Data Persistence: All tasks are stored in a tasks.json file.
 -Robust Validation: Built-in ID validation and status checking.
 
-- Modules: `json`, `pathlib`, `sys`, `datetime`
+-Modules: json, pathlib, sys, datetime
 
 Installation
 

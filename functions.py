@@ -2,6 +2,7 @@ from storage import load_TASKS, save_TASKS
 from models import Task
 from helpers import validate_id, today
 
+#list function to print every task, key use is for printing tasks with excact status
 def list(key = None):
     if key not in (None, "to_do", "in_progress","done"):
         print(f"Error: Status: {key} doesn't exist")
@@ -17,10 +18,14 @@ def list(key = None):
             print(obj)
             print("="*50)
             found = True
-
+    #no tasks case
     if not found:
-        print(f"No tasks with status: {key}")
+        if key:
+            print(f"Error: No tasks with status: {key}")
+        else:
+            print("Error: No tasks in list")
 
+#add function with auto-incremement id
 def add(description: str):
     tasks = load_TASKS()
 
@@ -33,7 +38,7 @@ def add(description: str):
     save_TASKS(tasks)
 
     print(f"New task added, id: {new_id}")
-
+#mark_done function with validate id to ensure number is provided
 @validate_id
 def mark_done(id):
     tasks = load_TASKS()
@@ -58,6 +63,7 @@ def mark_done(id):
         print(f"Error: Task ID: {id} already done")
     else:
         print(f"Error: ID: {id} not found")
+#mark_in progress function with validate id to ensure number is provided
 
 @validate_id
 def mark_in_progress(id):
@@ -83,6 +89,7 @@ def mark_in_progress(id):
         print(f"Error: Task ID: {id} already 'in_progress'")
     else:
         print(f"Error: ID: {id} not found")
+#update with validate id to ensure number is provided
 
 @validate_id
 def update(id, descritpion):
@@ -101,6 +108,7 @@ def update(id, descritpion):
         print(f"Task ID: {id} updated successfully")
     else:
         print(f"Error: ID: {id} not found")
+#delete with validate id to ensure number is provided
 
 @validate_id
 def delete(id):
